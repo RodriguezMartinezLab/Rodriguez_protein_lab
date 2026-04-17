@@ -151,7 +151,7 @@ ul { list-style: none; }
   inset: 0;
   background:
     linear-gradient(135deg, rgba(0,35,80,.90) 0%, rgba(0,80,140,.76) 60%, rgba(0,35,80,.82) 100%),
-    src'images/Protein_placeholder.png' center/cover no-repeat;
+    src = "images/Protein_placeholder.png" center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
