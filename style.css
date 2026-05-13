@@ -7,15 +7,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --yale-blue:   #00356B;
-  --yale-light:  #286DC0;
-  --ink:         #111317;
-  --ink-mid:     #3a3f4a;
-  --ink-soft:    #6b7280;
-  --border:      #e4e6ea;
-  --surface:     #f7f8fa;
+  --yale-blue:   #A44200;
+  --yale-light:  #F49F0A;
+  --ink:         #0B0A07;
+  --ink-mid:     #3a3228;
+  --ink-soft:    #7a6a58;
+  --border:      #e8e0d8;
+  --surface:     #faf8f5;
   --white:       #ffffff;
-  --accent:      #C0973B;
+  --accent:      #EFCA08;
 
   --font-serif:  'Cormorant Garamond', Georgia, serif;
   --font-sans:   'DM Sans', sans-serif;
@@ -124,7 +124,7 @@ ul { list-style: none; }
   transition: all .18s;
 }
 .nav-links a:hover,
-.nav-links a.active { color: var(--yale-blue); background: rgba(0,53,107,.07); }
+.nav-links a.active { color: var(--yale-blue); background: rgba(164,66,0,.08); }
 .nav-links .nav-cta { background: var(--yale-blue); color: var(--white); margin-left: 8px; }
 .nav-links .nav-cta:hover { background: var(--yale-light); }
 .hamburger {
@@ -150,13 +150,13 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(0,35,80,.90) 0%, rgba(0,80,140,.76) 60%, rgba(0,35,80,.82) 100%),
+    linear-gradient(135deg, rgba(11,10,7,.92) 0%, rgba(164,66,0,.80) 60%, rgba(11,10,7,.88) 100%),
     src = "images/Protein_placeholder.png" center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(192,151,59,.08) 0%, transparent 65%);
+  background: radial-gradient(ellipse at 70% 50%, rgba(239,202,8,.08) 0%, transparent 65%);
 }
 .hero-content {
   position: relative;
@@ -282,7 +282,7 @@ ul { list-style: none; }
 .pub-authors { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 3px; }
 .pub-journal { font-size: 12.5px; color: var(--ink-mid); margin-bottom: 8px; }
 .pub-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.tag { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; background: rgba(0,53,107,.07); color: var(--yale-blue); padding: 3px 9px; border-radius: 100px; font-weight: 500; }
+.tag { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; background: rgba(164,66,0,.08); color: var(--yale-blue); padding: 3px 9px; border-radius: 100px; font-weight: 500; }
 
 /* ── Research Teaser ────────────────────────────────────── */
 .research-teaser { padding: 100px 0; background: var(--white); }
@@ -333,7 +333,7 @@ ul { list-style: none; }
 }
 
 /* ── Join CTA ───────────────────────────────────────────── */
-.join-cta { background: linear-gradient(130deg, var(--yale-blue) 0%, #004e9a 100%); padding: 90px 0; }
+.join-cta { background: linear-gradient(130deg, #0B0A07 0%, #A44200 100%); padding: 90px 0; }
 .join-inner {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -366,7 +366,7 @@ ul { list-style: none; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,.25); align-self: end; text-align: right; padding-bottom: 2px; }
 
 /* ── Page Hero (inner pages) ────────────────────────────── */
-.page-hero { background: linear-gradient(135deg, var(--yale-blue) 0%, #003f7f 100%); padding: 120px 24px 72px; margin-top: var(--nav-h); }
+.page-hero { background: linear-gradient(135deg, #0B0A07 0%, #A44200 100%); padding: 120px 24px 72px; margin-top: var(--nav-h); }
 .page-hero-inner { max-width: var(--max-w); margin: 0 auto; }
 .page-hero-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .page-hero h1 { font-family: var(--font-serif); font-size: clamp(36px, 6vw, 64px); font-weight: 300; color: var(--white); line-height: 1.1; }
