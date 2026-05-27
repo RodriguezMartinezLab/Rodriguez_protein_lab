@@ -79,9 +79,10 @@
     <div class="container">
       <div class="pi-grid">
         <div class="pi-image-wrap">
-          <div class="pi-image-frame">
-            <!-- REPLACE: save your photo as images/pi-photo.jpg -->
-            <img src="images/Maria.png" alt="Prof. María Rodríguez Martínez" class="pi-photo"
+          <div class="pi-image-frame" style="width:100%;aspect-ratio:unset;height:auto;">
+            <!-- REPLACE: save your photo as images/Maria.jpg (any aspect ratio works) -->
+            <img src="images/Maria.jpg" alt="Prof. María Rodríguez Martínez" class="pi-photo"
+                 style="width:100%;height:auto;display:block;object-fit:cover;object-position:center;"
                  onerror="this.src='https://placehold.co/480x600/00356B/ffffff?text=Photo+Coming+Soon'" />
           </div>
           <div class="pi-image-accent"></div>
@@ -148,7 +149,7 @@
     </div>
   </section>
 
-  <!-- NEWS + PUBLICATIONS -->
+  <!-- NEWS + PUBLICATIONS (commented out — uncomment to restore)
   <section class="news-pubs">
     <div class="container">
       <div class="np-grid">
@@ -159,7 +160,7 @@
             <h2 class="section-title">News</h2>
           </div>
           <ul class="news-list">
-            <!-- REPLACE: fill in with real news as it happens -->
+            [REPLACE: fill in with real news as it happens]
             <li class="news-item">
               <span class="news-date">[Mon YYYY]</span>
               <div><p class="news-headline">[News item — new paper, award, conference talk, lab member joining, etc.]</p></div>
@@ -197,7 +198,7 @@
             <h2 class="section-title">Recent Publications</h2>
           </div>
           <ul class="pub-list">
-            <!-- REPLACE: swap [YYYY] placeholders with your most recent papers -->
+            [REPLACE: swap [YYYY] placeholders with your most recent papers]
             <li class="pub-item">
               <div class="pub-year">[YYYY]</div>
               <div class="pub-body">
@@ -241,6 +242,7 @@
       </div>
     </div>
   </section>
+  END NEWS + PUBLICATIONS -->
 
   <!-- JOIN US CTA -->
   <section class="join-cta">
