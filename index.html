@@ -3,139 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — Rodríguez Martínez Lab · Yale</title>
+  <title>Rodríguez Martínez Lab — Yale School of Medicine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ── Wide/Rectangular Gallery Layout ── */
-    .research-card {
-      background: var(--surface, #f8f9fa);
-      border: 1.5px solid var(--border, #e9ecef);
-      border-radius: var(--r-lg, 12px);
-      padding: 40px;
-      margin-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      overflow: hidden;
-    }
-    
-    .research-card-header {
-      max-width: 800px;
-    }
-
-    .research-card-body {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    /* Beautiful landscape wrapper for figures with a clean white background */
-    .img-gallery-wide {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 21/9;
-      min-height: 280px;
-      max-height: 440px;
-      overflow: hidden;
-      border-radius: var(--r, 8px);
-      background: #ffffff;
-      border: 1.5px solid var(--border, #e9ecef);
-    }
-    
-    @media (max-width: 768px) {
-      .img-gallery-wide {
-        aspect-ratio: 16/9;
-      }
-    }
-
-    .img-gallery-wide img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Ensures widescreen/rectangular charts are never cut off */
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-    .img-gallery-wide img.active {
-      opacity: 1;
-    }
-
-    /* Gallery HUD Controls */
-    .gallery-nav {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 6px 12px;
-      border-radius: 20px;
-    }
-    .gallery-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
-      cursor: pointer;
-      transition: background 0.25s;
-      border: none;
-      padding: 0;
-    }
-    .gallery-dot.active {
-      background: #fff;
-    }
-    .gallery-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      z-index: 10;
-      transition: background 0.2s;
-    }
-    .gallery-arrow:hover { background: rgba(0, 0, 0, 0.8); }
-    .gallery-arrow.prev { left: 16px; }
-    .gallery-arrow.next { right: 16px; }
-    
-    .gallery-count {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: rgba(0, 0, 0, 0.65);
-      color: #fff;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-family: var(--font-mono, monospace);
-    }
-
-    .research-text-content {
-      font-size: 16px;
-      color: var(--ink-mid);
-      line-height: 1.75;
-    }
-    .research-text-content p {
-      margin-bottom: 16px;
-    }
-    .research-text-content p:last-child {
-      margin-bottom: 0;
-    }
-  </style>
 </head>
 <body>
 
@@ -146,121 +17,156 @@
         <span class="logo-sub">Yale School of Medicine</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="people.html">People</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="research.html">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
-
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">Science</p>
-      <h1>Research Areas</h1>
-      <p>We integrate state-of-the-art AI with mechanistic models of the immune system to advance cancer immunotherapy, understand autoimmune disease, and construct highly accurate structural tools.</p>
-    </div>
-  </div>
-
-  <main>
-    <section class="research-section">
-      <div class="container">
-
-        <div class="fade-in" style="max-width:760px; margin:0 auto 80px; text-align:center;">
-          <p style="font-size:17px; color:var(--ink-mid); line-height:1.85;">Our lab bridges deep learning — transformers, structural predictors, generative models — with biophysics and computational immunology. A unifying theme is <strong>interpretability</strong>: we build models that are not only accurate but that reveal the biological rules behind their predictions, enabling mechanistic insight alongside computational power.</p>
-        </div>
-
-        <div class="research-card fade-in" id="project-anarci">
-          <div class="research-card-header">
-            <p class="section-label">Research Area 01</p>
-            <h2>Protein language models to decode immune recognition</h2>
-          </div>
-          <div class="research-card-body">
-            <div class="img-gallery-wide">
-              <img src="images/Project1_1.png" alt="ANARCI Alignment Interface - view 1" class="active" />
-              <img src="images/Project1_2.png" alt="ANARCI Alignment Interface - view 2" />
-            </div>
-            <div class="research-text-content">
-              <p>Aligning variable sequences of antibody and T-cell receptors (TCR) to established numbering schemes is fundamental for structural protein modeling, immunoinformatics analysis, and rational therapeutic engineering. However, different scientific disciplines rely on varied definitions of position equivalence, splitting applications across separate incompatible pipelines.</p>
-              <p>To address this, we utilize frameworks like ANARCI, a high-throughput tool capable of classifying and numbering amino-acid variable domain sequences under the five primary standard frameworks: Kabat, Chothia, Enhanced Chothia, IMGT, and AHo. The architecture aligns sequences against an array of Hidden Markov Models (HMMs) covering germ-line sequences from multiple species—including human, mouse, and rhesus monkey—using HMMER3 execution parameters.</p>
-              <p>This allows reliable cross-disciplinary comparison of target binding regions, processing millions of complex antibody sequence strands seamlessly while mapping structural loops, insertions, and deletions effectively.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-card fade-in" id="project-immunology">
-          <div class="research-card-header">
-            <p class="section-label">Research Area 02</p>
-            <h2>Structural modeling of antigen receptors</h2>
-          </div>
-          <div class="research-card-body">
-            <div class="img-gallery-wide">
-              <img src="images/Project2_1.png" alt="Graph-Based Antibody Affinity Maturation" class="active" />
-            </div>
-            <div class="research-text-content">
-              <p>We develop computational models to understand T and B cell function in the context of complex diseases — particularly cancer and autoimmune disorders such as rheumatoid arthritis. A major focus is decoding the specificity of T cell receptors (TCRs) and how B cells evolve in germinal centers.</p>
-              <p>We use mechanistic stochastic models to recapitulate B cell development and affinity maturation — including graph-based models of antibody affinity maturation — and deep learning models to predict TCR-epitope binding. We actively participate in community benchmarking challenges (e.g., IMMREP) to rigorously evaluate and improve these methods.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-card fade-in" id="project-interpretable">
-          <div class="research-card-header">
-            <p class="section-label">Research Area 03</p>
-            <h2>Stochastic and graph models of B-cell affinity maturation</h2>
-          </div>
-          <div class="research-card-body">
-            <div class="research-text-content">
-              <p>Many deep learning models operate as black boxes — they achieve high predictive accuracy but provide little insight into <em>why</em> a prediction is made. This is a critical limitation in biology and medicine, where understanding mechanism is often as important as prediction.</p>
-              <p>We design architectures — including multi-modal attention-based networks and physics-informed models — that highlight the genetic and chemical patterns most informative for a given prediction. A key recent focus is fine-tuning large language models to decode immune recognition, making predictions interpretable at the level of amino-acid sequence features.</p>
-              <p>This line of work ensures our models can be trusted, interrogated, and used to generate hypotheses for experimental follow-up.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-card fade-in" id="project-cancer">
-          <div class="research-card-header">
-            <p class="section-label">Research Area 04</p>
-            <h2>Multi-omics computational approaches for cancer patient stratification</h2>
-          </div>
-          <div class="research-card-body">
-            <div class="img-gallery-wide">
-              <img src="images/Project4_1.png" alt="T-cell Structures and Sequences Figure 1" class="active" />
-              <img src="images/Project4_2.png" alt="T-cell Structures and Sequences Figure 2" />
-              <img src="images/Project4_3.png" alt="T-cell Structures and Sequences Figure 3" />
-            </div>
-            <div class="research-text-content">
-              <p>A central goal of our lab is to advance the design of cell-based immunotherapies for cancer. We use pooled screening approaches combined with single-cell sequencing to dissect how different CAR-T cell signaling architectures affect T cell activation, persistence, and anti-tumor efficacy.</p>
-              <p>A major project focuses on T-cell structures and sequences in cancer and autoimmunity — leveraging structural AI alongside sequence-based models to identify the TCR features that govern antigen recognition and drive disease-relevant T cell responses.</p>
-              <p>We also develop multi-omics computational approaches for cancer patient stratification, integrating genomic, transcriptomic, epigenetic, and proteomic data to predict clinical outcomes and guide treatment decisions.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-card fade-in" id="project-generative">
-          <div class="research-card-header">
-            <p class="section-label">Research Area 05</p>
-            <h2>Predicting cellular composition responses to perturbation</h2>
-          </div>
-          <div class="research-card-body">
-            <div class="img-gallery-wide">
-              <img src="images/Project5_1.png" alt="Generative Model Map 1" class="active" />
-              <img src="images/Project5_2.png" alt="Generative Model Map 2" />
-              <img src="images/Project5_3.png" alt="Generative Model Map 3" />
-            </div>
-            <div class="research-text-content">
-              <p>The recent revolution in protein language models and structural AI (AlphaFold, ESMFold, RoseTTAFold) opens new possibilities for immune receptor engineering. We develop and apply generative models for <em>in silico</em> design of antibodies, TCRs, and anticancer compounds with desired properties.</p>
-              <p>We combine deep generative models with molecular docking and multi-omics constraints to produce candidate compounds that are both chemically feasible and biologically motivated. A key emphasis is incorporating the genetic profile of target diseases — moving beyond generic generative approaches toward truly personalized drug design.</p>
-            </div>
-          </div>
-        </div>
-
+  
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Department of Biomedical Informatics &amp; Data Science · Yale School of Medicine</p>
+      <h1 class="hero-title">
+        AI Meets the<br/>
+        <em>Immune System</em>
+      </h1>
+      <p class="hero-desc">We develop interpretable machine learning and mechanistic models to decode T and B cell function in cancer and autoimmune diseases — bridging deep learning, biophysics, and computational immunology.</p>
+      <div class="hero-actions">
+        <a href="research.html" class="btn btn-primary">Our Research</a>
+        <a href="people.html" class="btn btn-ghost">Meet the Team</a>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <div class="hero-video-container">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="images/homepage_2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <section class="yale-strip">
+    <div class="yale-strip-inner">
+      <div class="yale-badge">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#fff" stroke-width="1.5"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="11" fill="#fff" font-family="serif" font-weight="bold">Y</text></svg>
+        <span>Yale University · New Haven, CT</span>
+      </div>
+      <div class="yale-stats">
+        <div class="stat"><span class="stat-num">###</span><span class="stat-label">Lab Members</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">###</span><span class="stat-label">Publications</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">2024</span><span class="stat-label">Joined Yale</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">###</span><span class="stat-label">Citations</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pi-section">
+    <div class="container">
+      <div class="pi-grid">
+        <div class="pi-image-wrap">
+          <div class="pi-image-frame" style="width:100%;aspect-ratio:unset;height:auto;">
+            <img src="images/Maria.jpg" alt="Prof. María Rodríguez Martínez" class="pi-photo"
+                 style="width:100%;height:auto;display:block;object-fit:cover;object-position:center;"
+                 onerror="this.src='https://placehold.co/480x600/00356B/ffffff?text=Photo+Coming+Soon'" />
+          </div>
+          <div class="pi-image-accent"></div>
+        </div>
+        <div class="pi-text">
+          <p class="section-label">Principal Investigator</p>
+          <h2 class="pi-name">Prof. María Rodríguez Martínez</h2>
+          <p class="pi-title-line">Associate Professor · Dept. of Biomedical Informatics &amp; Data Science · Yale School of Medicine</p>
+          <p class="pi-bio">Prof. Rodríguez Martínez earned her PhD in physics at the Institut d'Astrophysique de Paris before transitioning to computational biology during postdoctoral work at the Weizmann Institute of Science (Israel) and Columbia University (USA). She then spent over a decade at IBM Research Europe (Switzerland) as Technical Leader of Systems Biology, building a world-leading team in computational systems biology and leading major EU-funded consortia on prostate and pediatric cancers.</p>
+          <p class="pi-bio">She joined Yale School of Medicine as Associate Professor in the new Department of Biomedical Informatics &amp; Data Science in May 2024. Her research integrates mechanistic models and interpretable deep learning — including transformers, structural predictors, and generative AI — to decode how immune receptors function in cancer and autoimmune disease, and to guide the design of novel cell-based immunotherapies.</p>
+          <p class="pi-bio">She serves on the editorial boards of <em>ImmunoInformatics</em>, <em>Frontiers in Systems Biology</em>, <em>BMC Bioinformatics</em>, and <em>IEEE Transactions on Molecular, Biological, and Multi-Scale Communications</em>, and is a frequent speaker at ISMB, ECCB, and the Society for Mathematical Biology.</p>
+          <div class="pi-links">
+            <a href="people.html" class="link-arrow">Group Members →</a>
+            <a href="people.html#pi" class="link-arrow">Full Profile →</a>
+            <a href="https://medicine.yale.edu/profile/maria-rodriguezmartinez/" target="_blank" class="link-arrow">Yale Profile →</a>
+            <a href="https://scholar.google.com/citations?user=PjKglDoAAAAJ" target="_blank" class="link-arrow">Google Scholar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-teaser">
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Research Areas</h2>
+      </div>
+      <div class="research-cards">
+        <a href="research.html#project1" class="rcard">
+          <div class="rcard-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="6" x2="16" y2="12" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="20" x2="16" y2="26" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="16" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="16" x2="26" y2="16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Project 1: Protein language models to decode immune recognition</h3>
+          <p>Adapting pre-trained protein and immune-receptor language models to paired receptor-target interaction data to learn determinants of specificity and affinity[cite: 246, 248].</p>
+          <span class="rcard-arrow">→</span>
+        </a>
+
+        <a href="research.html#project2" class="rcard">
+          <div class="rcard-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="5" y="12" width="6" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="8" width="6" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="5" width="6" height="17" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Project 2: Graph based ML for antibody modeling</h3>
+          <p>Leveraging geometric deep learning and structural frameworks to capture critical antibody-antigen spatial relationships and rank binding affinity[cite: 249, 255, 256].</p>
+          <span class="rcard-arrow">→</span>
+        </a>
+
+        <a href="research.html#project3" class="rcard">
+          <div class="rcard-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6v20M6 16h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Project 3: T-cell Structures and Sequences for Cancer and Autoimmunity</h3>
+          <p>Combining unsupervised anomaly detection with deep learning and biophysical modeling to resolve TCR sequences and structurally predict pMHC interactions[cite: 265, 267].</p>
+          <span class="rcard-arrow">→</span>
+        </a>
+
+        <a href="research.html#project4" class="rcard">
+          <div class="rcard-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M17 17l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Project 4: Generative AI for TCR-pMHC binding prediction</h3>
+          <p>Benchmarking de novo peptide design funnels powered by bioinformatics filtering, energy optimization, structural scoring, and LLM orchestration agent layers[cite: 271, 272, 273].</p>
+          <span class="rcard-arrow">→</span>
+        </a>
+
+        <a href="research.html#project5" class="rcard">
+          <div class="rcard-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24V8l16 16V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Project 5: Funtional characterization of immune cells using transcriptomic data</h3>
+          <p>Integrating single-cell RNA sequencing, cell-type annotation, and lineage tracking to dissect tumor microenvironments and discover subtype-specific immune signatures[cite: 464, 467, 469].</p>
+          <span class="rcard-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="join-cta">
+    <div class="join-inner">
+      <div class="join-text">
+        <p class="section-label light">Join the Lab</p>
+        <h2>We're always looking for<br/>curious, driven scientists.</h2>
+        <p>Open positions for postdocs, graduate students, and undergraduates.</p>
+      </div>
+      <a href="contact.html" class="btn btn-light">Get in Touch →</a>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-inner">
@@ -269,78 +175,15 @@
         <p class="footer-address">Department of Biomedical Informatics &amp; Data Science<br/>Yale School of Medicine<br/>101 College St, 10th floor<br/>New Haven, CT 06510</p>
       </div>
       <nav class="footer-nav">
-        <a href="index.html">Home</a><a href="people.html">People</a>
-        <a href="research.html">Research</a><a href="publications.html">Publications</a>
-        <a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="people.html">People</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <p class="footer-copy">© 2026 Rodríguez Martínez Lab · Yale University</p>
     </div>
   </footer>
 
-  <script src="main.js"></script>
-  <script>
-    // ── Ultra-Robust Dynamic Gallery Engine ───────────────────────────────────
-    document.querySelectorAll('.img-gallery-wide').forEach(gallery => {
-      const imgs = gallery.querySelectorAll('img');
-      const total = imgs.length;
-
-      if (total === 0) {
-        gallery.remove();
-        return;
-      }
-
-      if (total === 1) {
-        return;
-      }
-
-      const prevBtn = document.createElement('button');
-      prevBtn.className = 'gallery-arrow prev';
-      prevBtn.innerHTML = '&#8592;';
-      prevBtn.setAttribute('aria-label', 'Previous Image');
-
-      const nextBtn = document.createElement('button');
-      nextBtn.className = 'gallery-arrow next';
-      nextBtn.innerHTML = '&#8594;';
-      nextBtn.setAttribute('aria-label', 'Next Image');
-
-      const counter = document.createElement('span');
-      counter.className = 'gallery-count';
-      counter.textContent = `1 / ${total}`;
-
-      const navContainer = document.createElement('div');
-      navContainer.className = 'gallery-nav';
-
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('button');
-        dot.className = `gallery-dot ${i === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Go to image ${i + 1}`);
-        navContainer.appendChild(dot);
-      }
-
-      gallery.appendChild(prevBtn);
-      gallery.appendChild(nextBtn);
-      gallery.appendChild(navContainer);
-      gallery.appendChild(counter);
-
-      const dots = navContainer.querySelectorAll('.gallery-dot');
-      let current = 0;
-
-      function goTo(idx) {
-        imgs[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (idx + total) % total;
-        imgs[current].classList.add('active');
-        dots[current].classList.add('active');
-        counter.textContent = `${current + 1} / ${total}`;
-      }
-
-      prevBtn.addEventListener('click', (e) => { e.preventDefault(); goTo(current - 1); });
-      nextBtn.addEventListener('click', (e) => { e.preventDefault(); goTo(current + 1); });
-      dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.preventDefault(); goTo(i); }));
-
-      let autoPlay = setInterval(() => goTo(current + 1), 6000);
-      gallery.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    });
-  </script>
 </body>
 </html>
