@@ -31,7 +31,7 @@
       gap: 32px;
     }
 
-    /* Beautiful landscape wrapper for figures */
+    /* Beautiful landscape wrapper for figures with a clean white background */
     .img-gallery-wide {
       position: relative;
       width: 100%;
@@ -40,7 +40,7 @@
       max-height: 440px;
       overflow: hidden;
       border-radius: var(--r, 8px);
-      background: #0b0c10;
+      background: #ffffff;
       border: 1.5px solid var(--border, #e9ecef);
     }
     
@@ -73,7 +73,7 @@
       display: flex;
       gap: 8px;
       z-index: 10;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       padding: 6px 12px;
       border-radius: 20px;
     }
@@ -116,7 +116,7 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       color: #fff;
       font-size: 12px;
       padding: 4px 10px;
@@ -184,9 +184,9 @@
               <img src="images/Project1_2.png" alt="ANARCI Alignment Interface - view 2" />
             </div>
             <div class="research-text-content">
-              <p>Aligning variable sequences of antibody and T-cell receptors (TCR) to established numbering schemes is fundamental for structural protein modeling, immunoinformatics analysis, and rational therapeutic engineering[cite: 13, 24]. However, different scientific disciplines rely on varied definitions of position equivalence, splitting applications across separate incompatible pipelines[cite: 14].</p>
-              <p>To address this, we utilize frameworks like ANARCI, a high-throughput tool capable of classifying and numbering amino-acid variable domain sequences under the five primary standard frameworks: Kabat, Chothia, Enhanced Chothia, IMGT, and AHo[cite: 16, 17]. The architecture aligns sequences against an array of Hidden Markov Models (HMMs) covering germ-line sequences from multiple species—including human, mouse, and rhesus monkey—using HMMER3 execution parameters[cite: 61, 62].</p>
-              <p>This allows reliable cross-disciplinary comparison of target binding regions, processing millions of complex antibody sequence strands seamlessly while mapping structural loops, insertions, and deletions effectively[cite: 23, 28, 82].</p>
+              <p>Aligning variable sequences of antibody and T-cell receptors (TCR) to established numbering schemes is fundamental for structural protein modeling, immunoinformatics analysis, and rational therapeutic engineering. However, different scientific disciplines rely on varied definitions of position equivalence, splitting applications across separate incompatible pipelines.</p>
+              <p>To address this, we utilize frameworks like ANARCI, a high-throughput tool capable of classifying and numbering amino-acid variable domain sequences under the five primary standard frameworks: Kabat, Chothia, Enhanced Chothia, IMGT, and AHo. The architecture aligns sequences against an array of Hidden Markov Models (HMMs) covering germ-line sequences from multiple species—including human, mouse, and rhesus monkey—using HMMER3 execution parameters.</p>
+              <p>This allows reliable cross-disciplinary comparison of target binding regions, processing millions of complex antibody sequence strands seamlessly while mapping structural loops, insertions, and deletions effectively.</p>
             </div>
           </div>
         </div>
@@ -254,25 +254,6 @@
             <div class="research-text-content">
               <p>The recent revolution in protein language models and structural AI (AlphaFold, ESMFold, RoseTTAFold) opens new possibilities for immune receptor engineering. We develop and apply generative models for <em>in silico</em> design of antibodies, TCRs, and anticancer compounds with desired properties.</p>
               <p>We combine deep generative models with molecular docking and multi-omics constraints to produce candidate compounds that are both chemically feasible and biologically motivated. A key emphasis is incorporating the genetic profile of target diseases — moving beyond generic generative approaches toward truly personalized drug design.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-in" style="background:var(--surface); border-radius:var(--r-lg); padding:48px; margin-bottom:40px;">
-          <p class="section-label">Support</p>
-          <h2 style="font-family:var(--font-serif); font-weight:300; font-size:28px; margin-bottom:24px;">Funding</h2>
-          <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:16px;">
-            <div style="background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:20px;">
-              <p style="font-weight:500; margin-bottom:4px;">[Grant Agency &amp; Number]</p>
-              <p style="font-size:13px; color:var(--ink-soft);">[Grant Title]</p>
-            </div>
-            <div style="background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:20px;">
-              <p style="font-weight:500; margin-bottom:4px;">[Grant Agency &amp; Number]</p>
-              <p style="font-size:13px; color:var(--ink-soft);">[Grant Title]</p>
-            </div>
-            <div style="background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:20px;">
-              <p style="font-weight:500; margin-bottom:4px;">Yale School of Medicine</p>
-              <p style="font-size:13px; color:var(--ink-soft);">Start-up funding · Dept. of Biomedical Informatics &amp; Data Science</p>
             </div>
           </div>
         </div>
