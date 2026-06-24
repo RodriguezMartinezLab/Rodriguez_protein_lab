@@ -8,16 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Handles the webpage edges and restricts total layout width */
+    body {
+      padding-left: 48px;   /* Exact 0.5-inch margin on the left y-axis */
+      padding-right: 48px;  /* Exact 0.5-inch margin on the right y-axis */
+      max-width: 1100px;    /* Prevents the elements from stretching too wide */
+      margin: 0 auto;       /* Centers the layout on the screen */
+    }
+
     /* ── Wide/Rectangular Gallery Layout ── */
     .research-card {
       background: var(--surface, #f8f9fa);
       border: 1.5px solid var(--border, #e9ecef);
       border-radius: var(--r-lg, 12px);
-      padding: 40px;
-      margin-bottom: 60px;
+      padding: 24px;          /* Shrunk down from 40px to tighten up the text */
+      margin-bottom: 40px;    /* Shrunk down from 60px to bring the cards closer */
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;              /* Shrunk down from 32px */
       overflow: hidden;
     }
     
@@ -35,9 +43,9 @@
     .img-gallery-wide {
       position: relative;
       width: 100%;
-      aspect-ratio: 21/9;
-      min-height: 280px;
-      max-height: 440px;
+      aspect-ratio: 16/9;     /* Changed from 21/9 to make the image frame tighter */
+      min-height: 200px;      /* Reduced from 280px */
+      max-height: 320px;      /* Reduced from 440px to dramatically scale down image height */
       overflow: hidden;
       border-radius: var(--r, 8px);
       background: #ffffff;
@@ -46,7 +54,7 @@
     
     @media (max-width: 768px) {
       .img-gallery-wide {
-        aspect-ratio: 16/9;
+        aspect-ratio: 4/3;   /* Gives mobile view a compact, slightly boxier profile */
       }
     }
 
