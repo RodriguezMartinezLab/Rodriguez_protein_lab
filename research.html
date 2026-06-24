@@ -171,7 +171,7 @@
         <div class="research-card fade-in" id="project-anarci">
           <div class="research-card-header">
             <p class="section-label">Research Area 01</p>
-            <h2>Antigen Receptor Numbering &amp; Receptor Classification</h2>
+            <h2>Project 1: Protein language models to decode immune recognition</h2>
           </div>
           <div class="research-card-body">
             <div class="img-gallery-wide">
@@ -179,9 +179,8 @@
               <img src="images/Project1_2.png" alt="ANARCI Alignment Interface - view 2" />
             </div>
             <div class="research-text-content">
-              <p>Aligning variable sequences of antibody and T-cell receptors (TCR) to established numbering schemes is fundamental for structural protein modeling, immunoinformatics analysis, and rational therapeutic engineering. However, different scientific disciplines rely on varied definitions of position equivalence, splitting applications across separate incompatible pipelines.</p>
-              <p>To address this, we utilize frameworks like ANARCI, a high-throughput tool capable of classifying and numbering amino-acid variable domain sequences under the five primary standard frameworks: Kabat, Chothia, Enhanced Chothia, IMGT, and AHo. The architecture aligns sequences against an array of Hidden Markov Models (HMMs) covering germ-line sequences from multiple species—including human, mouse, and rhesus monkey—using HMMER3 execution parameters.</p>
-              <p>This allows reliable cross-disciplinary comparison of target binding regions, processing millions of complex antibody sequence strands seamlessly while mapping structural loops, insertions, and deletions effectively.</p>
+              <p>Large biological "language models" can learn patterns not only in text, but also in protein and immune-receptor sequences. When pre-trained on millions of biological sequences, these models capture rich statistical regularities, including tolerated mutations, co-evolving residues, rare sequence motifs, and long-range dependencies. These features have enabled applications in variant scoring, protein design, perturbation analysis, and sequence generation. However, most pre-trained protein language models are trained on broad, heterogeneous sequence corpora, and therefore do not naturally answer the context-specific questions that arise in immunology: whether a T-cell receptor recognizes a peptide-MHC ligand, whether an antibody binds a target antigen, or how a local mutation changes recognition in a particular molecular context.</p>
+              <p>In our group, we adapt pre-trained protein and immune-receptor language models to paired receptor-target interaction data, including T-cell receptor-peptide-MHC interactions, antibody-antigen recognition, and immune-relevant protein-ligand systems. Rather than replacing these models with task-specific classifiers, we fine-tune them so that biological context reshapes their native token-level probability distributions. By conditioning on both the receptor and its binding partner, the model can learn determinants of specificity, cross-reactivity, and affinity-modulating mutations while preserving residue-level interpretability. We then compare these context-aware predictions with classical frequency-, structure-, and contact-based analyses, with the goal of building tools that are both more accurate for ranking binders and variants, and more interpretable for understanding how the immune system detects infections, tumors, and self-derived antigens.</p>
             </div>
           </div>
         </div>
@@ -189,15 +188,15 @@
         <div class="research-card fade-in" id="project-immunology">
           <div class="research-card-header">
             <p class="section-label">Research Area 02</p>
-            <h2>Computational Immunology</h2>
+            <h2>Project 2: Graph based ML for antibody modeling</h2>
           </div>
           <div class="research-card-body">
             <div class="img-gallery-wide">
               <img src="images/Project2_1.png" alt="Graph-Based Antibody Affinity Maturation" class="active" />
             </div>
             <div class="research-text-content">
-              <p>We develop computational models to understand T and B cell function in the context of complex diseases — particularly cancer and autoimmune disorders such as rheumatoid arthritis. A major focus is decoding the specificity of T cell receptors (TCRs) and how B cells evolve in germinal centers.</p>
-              <p>We use mechanistic stochastic models to recapitulate B cell development and affinity maturation — including graph-based models of antibody affinity maturation — and deep learning models to predict TCR-epitope binding. We actively participate in community benchmarking challenges (e.g., IMMREP) to rigorously evaluate and improve these methods.</p>
+              <p>Antibody affinity maturation remains a central challenge in rational antibody design, and sequence-only approaches are often insufficient, particularly in the context of scarce and imbalanced data. To address this, we leverage recent advances such as AlphaFold3 to obtain structural insights and encode coarse-grained representations of antibody-antigen complexes as graphs. Using geometric deep learning, we analyze these graph-based representations to capture spatial relationships that sequence models cannot.</p>
+              <p>This framework supports a variety of downstream tasks, including contact prediction, affinity ranking against specific targets, and the identification of plausible binding modes. As pioneers in this space, we actively participated in the Antibody challenge, where our graph-based affinity ranking models achieved 3rd place overall among international participants. By integrating structural context into machine learning, we aim to advance the biophysics-informed design of antibodies and provide a foundation for rational antibody engineering.</p>
             </div>
           </div>
         </div>
@@ -205,13 +204,13 @@
         <div class="research-card fade-in" id="project-interpretable">
           <div class="research-card-header">
             <p class="section-label">Research Area 03</p>
-            <h2>Interpretable Deep Learning</h2>
+            <h2>Project 3: T-cell Structures and Sequences for Cancer and Autoimmunity</h2>
           </div>
           <div class="research-card-body">
             <div class="research-text-content">
-              <p>Many deep learning models operate as black boxes — they achieve high predictive accuracy but provide little insight into <em>why</em> a prediction is made. This is a critical limitation in biology and medicine, where understanding mechanism is often as important as prediction.</p>
-              <p>We design architectures — including multi-modal attention-based networks and physics-informed models — that highlight the genetic and chemical patterns most informative for a given prediction. A key recent focus is fine-tuning large language models to decode immune recognition, making predictions interpretable at the level of amino-acid sequence features.</p>
-              <p>This line of work ensures our models can be trusted, interrogated, and used to generate hypotheses for experimental follow-up.</p>
+              <p>The human T-cell repertoire-a dynamic archive of immune history containing millions of unique clones-holds keys to personalized cancer immunotherapy. T cell receptors (TCRs) carry out their immune function by binding to peptide-MHC (pMHC) complexes. Yet, identifying rare, disease-relevant TCRs and accurately predicting their recognition of pMHC remain major computational and biological challenges.</p>
+              <p>To address the former problem, our project implements an unsupervised anomaly detection pipeline using a deep auto-encoder trained on the largest healthy donor TCR repertoire dataset assembled to date. By establishing a normal baseline of TCR on a large scale, we can identify TCR sequences that "break the rules", providing a direct window into disease pathology and accelerating the discovery of which T-cells are fighting a tumor or driving an autoimmune condition.</p>
+              <p>In order to tackle the latter challenge-predicting how TCRs recognize pMHC -we combine deep learning with biophysical modeling. We evaluate AlphaFold's ability to model unseen TCR-pMHC complexes, refine predicted interfaces using molecular dynamics (MD) simulations, and explore whether dynamic structural ensembles can better capture the flexibility of complementarity-determining regions (CDRs) than static models. This approach aims to generate accurate, physically realistic structures for both bound and unbound TCRs, laying the groundwork for reliable prediction of TCR-pMHC interactions.</p>
             </div>
           </div>
         </div>
@@ -219,7 +218,7 @@
         <div class="research-card fade-in" id="project-cancer">
           <div class="research-card-header">
             <p class="section-label">Research Area 04</p>
-            <h2>Cancer Immunotherapy &amp; Precision Medicine</h2>
+            <h2>Project 4: Generative Al for TCR-pMHC binding prediction</h2>
           </div>
           <div class="research-card-body">
             <div class="img-gallery-wide">
@@ -228,9 +227,8 @@
               <img src="images/Project4_3.png" alt="T-cell Structures and Sequences Figure 3" />
             </div>
             <div class="research-text-content">
-              <p>A central goal of our lab is to advance the design of cell-based immunotherapies for cancer. We use pooled screening approaches combined with single-cell sequencing to dissect how different CAR-T cell signaling architectures affect T cell activation, persistence, and anti-tumor efficacy.</p>
-              <p>A major project focuses on T-cell structures and sequences in cancer and autoimmunity — leveraging structural AI alongside sequence-based models to identify the TCR features that govern antigen recognition and drive disease-relevant T cell responses.</p>
-              <p>We also develop multi-omics computational approaches for cancer patient stratification, integrating genomic, transcriptomic, epigenetic, and proteomic data to predict clinical outcomes and guide treatment decisions.</p>
+              <p>TCR engagement is the ground truth for peptide design. We benchmark today's leading de novo peptide design tools at one of immunology's hardest interface, where a T cell receptor meets a peptide-MHC complex. Our pipeline funnels 320,000 in silico scaffolds through NetMHCpan, FoldX/OpenMM energetics, and AF3-based structural scoring, ending in wet-lab validation.</p>
+              <p>We're building the agent layer above our peptide design pipeline, which specialized agents that decide what to run, when to run it, and what to do with the results. Each stage of the design funnel becomes a tool an LLM orchestrator can call, turning a multi-week workflow into a single hands-off run on our HPC clusters. Our system autonomously runs the entire peptide design pipeline on scaffold generation, MHC filtering, energy optimization, and structural validation, with a single prompt returns a synthesis-ready shortlist.</p>
             </div>
           </div>
         </div>
@@ -238,7 +236,7 @@
         <div class="research-card fade-in" id="project-generative">
           <div class="research-card-header">
             <p class="section-label">Research Area 05</p>
-            <h2>Generative Protein &amp; Drug Models</h2>
+            <h2>Project 5: Funtional characterization of immune cells using transcriptomic data</h2>
           </div>
           <div class="research-card-body">
             <div class="img-gallery-wide">
@@ -247,8 +245,9 @@
               <img src="images/Project5_3.png" alt="Generative Model Map 3" />
             </div>
             <div class="research-text-content">
-              <p>The recent revolution in protein language models and structural AI (AlphaFold, ESMFold, RoseTTAFold) opens new possibilities for immune receptor engineering. We develop and apply generative models for <em>in silico</em> design of antibodies, TCRs, and anticancer compounds with desired properties.</p>
-              <p>We combine deep generative models with molecular docking and multi-omics constraints to produce candidate compounds that are both chemically feasible and biologically motivated. A key emphasis is incorporating the genetic profile of target diseases — moving beyond generic generative approaches toward truly personalized drug design.</p>
+              <p>Single-cell RNA sequencing has revolutionized our ability to profile tumor ecosystems at unprecedented resolution. Its capacity to capture gene expression in individual cells enables detailed characterization of cellular heterogeneity, identification of rare cell populations, and reconstruction of developmental trajectories within complex tissues. In gastric cancer, where molecular heterogeneity and diverse immune infiltration patterns complicate therapeutic strategies, single-cell approaches offer powerful tools to dissect the tumor microenvironment and identify clinically relevant biomarkers.</p>
+              <p>In our group, we integrate comprehensive cell type annotation with specialized B cell profiling approaches including clonal lineage tracking, phylogenetic tree reconstruction, and somatic hypermutation analysis - to understand how adaptive immune responses evolve within distinct tumor contexts. By analyzing over 1.6 million cells from gastric cancer patients and stratifying tumors based on CLDN18.2 expression, a promising therapeutic target, we examine how B cell populations and their communication patterns with other microenvironment cells differ across molecular subtypes. Our goal is to identify context-specific immune signatures that could inform precision immunotherapy strategies in gastric cancer.</p>
+              <p>Single-cell perturbation technologies such as Perturb-seq enable systematic mapping of how genetic perturbations reshape cellular populations at single-cell resolution. While most existing computational approaches focus on predicting average gene expression changes, many biologically important outcomes arise at the population level, where specific cell states expand, contract, or newly emerge following perturbation. In our group, we develop machine learning methods to model these compositional and phenotypic responses directly. To address this problem, we developed Pop-Corn, a framework that predicts how perturbations alter cell-state composition across both single-cell and spatial settings without reconstructing full gene expression profiles. By combining perturbation embeddings with representations of control cellular populations, Pop-Corn enables interpretable and generalizable prediction of perturbation-driven changes in cellular organization, tissue niches, and microenvironmental interactions.</p>
             </div>
           </div>
         </div>
