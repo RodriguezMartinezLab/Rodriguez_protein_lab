@@ -380,7 +380,7 @@ ul { list-style: none; }
 .person-role.pi { color: var(--yale-blue); font-weight: 500; }
 
 /* ── Research Page ──────────────────────────────────────── */
-.research-section { padding: 80px 0; }
+.research-section { padding: 80px 72px; }
 .research-block { margin-bottom: 80px; }
 .research-block-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .research-block-grid.reverse { direction: rtl; }
@@ -446,6 +446,7 @@ ul { list-style: none; }
   .footer-copy { text-align: left; }
   .research-block-grid { grid-template-columns: 1fr; }
   .research-block-grid.reverse { direction: ltr; }
+  .research-section { padding: 60px 24px; }
   .contact-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-item:nth-child(4n+1) { grid-column: span 1; aspect-ratio: 4/3; }
