@@ -8,24 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Handles the webpage edges and restricts total layout width */
-    body {
-      padding-left: 48px;   /* Exact 0.5-inch margin on the left y-axis */
-      padding-right: 48px;  /* Exact 0.5-inch margin on the right y-axis */
-      max-width: 1100px;    /* Prevents the elements from stretching too wide */
-      margin: 0 auto;       /* Centers the layout on the screen */
-    }
-
     /* ── Wide/Rectangular Gallery Layout ── */
     .research-card {
       background: var(--surface, #f8f9fa);
       border: 1.5px solid var(--border, #e9ecef);
       border-radius: var(--r-lg, 12px);
-      padding: 24px;          /* Shrunk down from 40px to tighten up the text */
-      margin-bottom: 40px;    /* Shrunk down from 60px to bring the cards closer */
+      padding: 40px;
+      margin-bottom: 60px;
       display: flex;
       flex-direction: column;
-      gap: 24px;              /* Shrunk down from 32px */
+      gap: 32px;
       overflow: hidden;
     }
     
@@ -39,22 +31,22 @@
       gap: 32px;
     }
 
-    /* Beautiful landscape wrapper for figures */
+    /* Handles wide rectangular images perfectly */
     .img-gallery-wide {
       position: relative;
       width: 100%;
-      aspect-ratio: 16/9;     /* Changed from 21/9 to make the image frame tighter */
-      min-height: 200px;      /* Reduced from 280px */
-      max-height: 320px;      /* Reduced from 440px to dramatically scale down image height */
+      aspect-ratio: 21/9; /* Optimized for landscape/rectangular figures */
+      min-height: 300px;
+      max-height: 450px;
       overflow: hidden;
       border-radius: var(--r, 8px);
-      background: #ffffff;
+      background: #0b0c10;
       border: 1.5px solid var(--border, #e9ecef);
     }
     
     @media (max-width: 768px) {
       .img-gallery-wide {
-        aspect-ratio: 4/3;   /* Gives mobile view a compact, slightly boxier profile */
+        aspect-ratio: 16/9;
       }
     }
 
@@ -63,7 +55,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ensures widescreen/rectangular charts are never cut off */
+      object-fit: contain; /* Prevents rectangular diagrams from being awkwardly cropped */
       opacity: 0;
       transition: opacity 0.5s ease;
       pointer-events: none;
@@ -71,8 +63,11 @@
     .img-gallery-wide img.active {
       opacity: 1;
     }
+    .img-gallery-wide.single img {
+      opacity: 1;
+    }
 
-    /* Gallery HUD Controls */
+    /* Controls overlay */
     .gallery-nav {
       position: absolute;
       bottom: 16px;
@@ -81,7 +76,7 @@
       display: flex;
       gap: 8px;
       z-index: 10;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       padding: 6px 12px;
       border-radius: 20px;
     }
@@ -89,7 +84,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255,255,255,0.4);
       cursor: pointer;
       transition: background 0.25s;
       border: none;
@@ -102,7 +97,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       border: none;
       color: #fff;
       width: 40px;
@@ -116,7 +111,7 @@
       z-index: 10;
       transition: background 0.2s;
     }
-    .gallery-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+    .gallery-arrow:hover { background: rgba(0,0,0,0.8); }
     .gallery-arrow.prev { left: 16px; }
     .gallery-arrow.next { right: 16px; }
     
@@ -124,7 +119,7 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0,0.6);
       color: #fff;
       font-size: 12px;
       padding: 4px 10px;
