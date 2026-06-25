@@ -294,10 +294,12 @@ ul { list-style: none; }
 
 /* ── Research Teaser ────────────────────────────────────── */
 .research-teaser { padding: 100px 0; background: var(--white); }
-.research-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.research-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 .rcard {
   display: flex;
   flex-direction: column;
+  flex: 1 1 calc(33.333% - 13.33px);
+  max-width: 360px;
   padding: 32px 28px;
   border-radius: var(--r-lg);
   border: 1.5px solid var(--border);
@@ -428,7 +430,7 @@ ul { list-style: none; }
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .research-cards { grid-template-columns: repeat(2, 1fr); }
+  .rcard { flex-basis: calc(50% - 10px); max-width: 420px; }
   .pi-grid { grid-template-columns: 300px 1fr; gap: 48px; }
 }
 @media (max-width: 768px) {
@@ -438,7 +440,7 @@ ul { list-style: none; }
   .pi-grid { grid-template-columns: 1fr; }
   .pi-image-wrap { max-width: 320px; }
   .np-grid { grid-template-columns: 1fr; gap: 48px; }
-  .research-cards { grid-template-columns: 1fr 1fr; }
+  .rcard { flex-basis: calc(50% - 10px); max-width: 420px; }
   .join-inner { flex-direction: column; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-copy { text-align: left; }
@@ -463,7 +465,7 @@ ul { list-style: none; }
   }
 }
 @media (max-width: 480px) {
-  .research-cards { grid-template-columns: 1fr; }
+  .rcard { flex-basis: 100%; max-width: 420px; }
   .yale-stats { flex-wrap: wrap; justify-content: center; }
   .stat-divider { display: none; }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
