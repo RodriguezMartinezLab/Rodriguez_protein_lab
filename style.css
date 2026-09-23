@@ -378,6 +378,10 @@ ul { list-style: none; }
 .person-name { font-family: var(--font-serif); font-size: 17px; font-weight: 400; margin-bottom: 4px; }
 .person-role { font-size: 12px; color: var(--ink-soft); letter-spacing: .04em; }
 .person-role.pi { color: var(--yale-blue); font-weight: 500; }
+.people-alumni { margin-bottom: 16px; }
+.people-alumni-heading { font-family: var(--font-serif); font-size: 32px; font-weight: 300; color: var(--yale-blue); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 6px; }
+.people-alumni-list { display: flex; flex-direction: column; }
+.people-alumni-item { padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px; }
 
 /* ── Research Page ──────────────────────────────────────── */
 .research-section { padding: 80px 72px; }
